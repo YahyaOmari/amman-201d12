@@ -140,9 +140,9 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
-    var firstMultiply = multiply(2,3);
+    var firstMultiply = multiply(multArr[0],multArr[1]);
     // console.log(firstMultiply);
-    var secondMultiply = multiply(firstMultiply[0],4);
+    var secondMultiply = multiply(firstMultiply[0],multArr[2]);
     // console.log(secondMultiply);
 
     var multArr = [
