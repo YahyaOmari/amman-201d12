@@ -178,22 +178,51 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
+
+//---------Second Solution----------
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+
+
     
-    var firstMultiply = multiply(1,2);
-    var secondMultiply = multiply(firstMultiply[0],3);
-    var thirdMultiply = multiply(secondMultiply[0],4);
-    var forthMultiply = multiply(thirdMultiply[0],5);
+    // number of elements == lenghth of array == 5
+    var elements = testDynamicArray.length;
+    // console.log(elements);
 
-    var arrayOfNumbers= [
-        forthMultiply[0],
+    //counter 
+    var product;
+
+    // function will multiply the elements iinside the array
+    var multiplyFunction = testDynamicArray[0];
+
+
+    for (var i =  1 ; i < elements +1; i++) {
+        product = multiply(multiplyFunction, i);
+        multiplyFunction = product[0];
+
+    }
+
+    var arrayOfNumbers = [
+        
+        product[0],
         "The numbers 1,2,3,4,5 have a product of 120."
-
     ];
+
+    //--------- Second solution------------
+    // var firstMultiply = multiply(1,2);
+    // var secondMultiply = multiply(firstMultiply[0],3);
+    // var thirdMultiply = multiply(secondMultiply[0],4);
+    // var forthMultiply = multiply(thirdMultiply[0],5);
+
+    // var arrayOfNumbers= [
+    //     forthMultiply[0],
+    //     "The numbers 1,2,3,4,5 have a product of 120."
+
+    // ];
+    // return arrayOfNumbers;
     return arrayOfNumbers;
+
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyAnyArray(testDynamicArray);
-
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
